@@ -62,8 +62,8 @@ const artworks = [
     image: "images/artworks/art4.jpeg",
     x: 1600,
     y: 390,
-    width: 220,
-    height: 280,
+    width: 340,
+    height: 220,
     description: "Add the description for Artwork 4 here.",
     progress: []
   },
