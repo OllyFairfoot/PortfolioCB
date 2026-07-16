@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #1f1a17;
+  color: #fff;
+}
+
+body.gallery-page {
+  overflow: hidden;
+}
+
+.site-header {
+  position: fixed;
+  top: 18px;
+  left: 24px;
+  z-index: 20;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.58);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.site-header h1,
+.site-header p {
+  margin: 0;
+}
+
+.site-header p {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.gallery {
+  position: relative;
+  width: 6400px;
+  height: 100vh;
+  min-height: 500px;
+
+  /* The uploaded wall image is repeated horizontally */
+  background-image: url("images/gallery-wall.jpg");
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 1600px 300px;
+
+  overflow: hidden;
+}
+
+.painting-link {
+  position: absolute;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transform: translate(-50%, -50%);
+}
+
+.painting-link img {
+  display: block;
+  max-width: none;
+  object-fit: cover;
+  border: 10px solid #342014;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.42),
+    0 0 0 2px rgba(255, 220, 150, 0.25);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.painting-link:hover img,
+.painting-link:focus img {
+  transform: scale(1.035);
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.55),
+    0 0 0 3px #f0d39a;
+}
+
+.painting-label {
+  display: block;
+  width: max-content;
+  max-width: 220px;
+  margin: 12px auto 0;
+  padding: 7px 10px;
+  color: #23180f;
+  background: #eee4cf;
+  border-radius: 2px;
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.scroll-hint {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* Artwork detail page */
+
+body.artwork-page {
+  background: #f3eee5;
+  color: #23180f;
+}
+
+.artwork-container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 70px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #7d2618;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.artwork-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.artwork-main-image {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  background: #ddd4c6;
+  box-shadow: 0 14px 32px rgba(35, 24, 15, 0.18);
+}
+
+.artwork-info h1 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.artwork-meta {
+  color: #6a5545;
+  line-height: 1.7;
+}
+
+.artwork-description {
+  margin-top: 24px;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  white-space: pre-line;
+}
+
+.progress-section {
+  margin-top: 64px;
+}
+
+.progress-section h2 {
+  font-size: 2rem;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.progress-card {
+  margin: 0;
+}
+
+.progress-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #ddd4c6;
+}
+
+.progress-card figcaption {
+  margin-top: 8px;
+  line-height: 1.45;
+  color: #6a5545;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .site-header p {
+    display: none;
+  }
+
+  .scroll-hint {
+    font-size: 0.75rem;
+  }
+
+  .artwork-hero {
+    grid-template-columns: 1fr;
+  }
+}
