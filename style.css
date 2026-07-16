@@ -42,12 +42,14 @@ body.gallery-page {
   height: 100vh;
   min-height: 500px;
 
+  background-color: #89291c;
   background-image: url("images/gallery-wall.jpg");
   background-repeat: repeat-x;
-  background-position: left center;
-  background-size: auto 100vh;
+  background-position: left top;
+  background-size: auto 100%;
 
   overflow: hidden;
+}
 }
 
 .painting-link {
