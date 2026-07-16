@@ -38,15 +38,14 @@ body.gallery-page {
 
 .gallery {
   position: relative;
-  width: 6400px;
+  width: 6800px;
   height: 100vh;
   min-height: 500px;
 
-  /* The uploaded wall image is repeated horizontally */
   background-image: url("images/gallery-wall.jpg");
   background-repeat: repeat-x;
-  background-position: left bottom;
-  background-size: 1600px 300px;
+  background-position: left center;
+  background-size: auto 100vh;
 
   overflow: hidden;
 }
